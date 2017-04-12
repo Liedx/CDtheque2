@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini projet Equipe de personnes</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){ // doc ready function
+	$('#spinner').hide();
+	//---------------------------------	
+	tabTeam	= [];
+	indiceTeam	= 0;
+	indiceUser	= 0;
+	// On cache la partie creation User
+	
+	//--------------------------------------
+	//
+	// ADD CD
+	//
+	//--------------------------------------
+	$("#btnAddCD").click(function(){
+			// remplacer team par CD !!!
+  			teamId = 1
+  			teamName =" Mon cd ";
+  			//indiceTeam++;
+			var str,str2;
+			
+			str ="<br><br>";
+			str +='<table class="table table-striped" data-id='+teamId+'>';
+			str	+="<tr>";
+			str	+="<td colspan=3><h3>#"+teamId +" "+teamName;
+			str	+=' <a class="btn btn-primary btnDelTeam" role="button">';
+			str	+='<span class="glyphicon glyphicon-trash">';
+			str	+='</span></a></h3></td>';
+			str	+="</tr>";
+			// entete du tableau
+			str	+="<tr>";
+			str	+="<th>Piste</th><th>Titre</th><th>Temps</th>";
+			str	+="</tr>";
+			str	+="</table>";
+			$('#demo').append(str);
+			
+		
+	}); // btn Add User (person)
+	//--------------------------------------
+	//--------------------------------------
+	//
+	// Delete Team
+	//
+	//--------------------------------------
+
+	$(document).on("click",'.btnDelCD', function(){
+		
+	});
+	//---------------------------------	
+	}); // doc ready function
+	//---------------------------------	
+	
+
+	</script>
+
+	<style>
+	.divUser{
+		background-color: #ccc;
+		padding: 20px;
+	}
+	.divTeam{
+		background-color: #ccc;
+		padding: 20px;
+	}
+
+	</style>
+</head>
+	<body>
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-8">
+				<div class="divTeam">
+					Titre du CD : 
+					<input type="text" id="team">
+					<a class="btn btn-success" 
+								id="btnAddCD" role="button">
+								<span class="glyphicon glyphicon-plus"></span>
+								Ajouter un CD
+							</a>
+							<span id="spinner">
+								<img src="spinner.gif">
+							</span>
+				</div>
+				<div id="demo"></div>
+				</div>
+				<div class="col-md-4">
+				<div class="divUser">
+					<table>
+						<tr>
+							<td>Categorie :</td>
+							<td><input type="text" id="nom" /></td>
+						</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+							<td><br>
+							<a class="btn btn-success" 
+								id="btnAddUser" role="button">
+								<span class="glyphicon glyphicon-plus"></span>
+								Ajouter une Category
+							</a>
+						</td>
+						</tr>
+					
+				</div>	
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Webservice</title>
+</head>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$( function() {
+//-----------------------------	
+var tableau =[]
+p1 = {nom:"John",prenom:"Doe"};
+p2 = {nom:"Jane",prenom:"Doe"};
+tableau.push(p1,p2);
+$('#btn1').click(function() {
+	$.post( 
+		// 1 URL
+		"online2.php",
+		// 2 les Variable 
+		{ tab: tableau } ,
+		// 3 function call back
+		function( data ) {
+  		//alert( "Data Loaded: " + data );
+  		$('#demo').html(data);
+	}).fail(function() {
+    alert( "error" );
+  });
+
+});
+//-----------------------------	
+});
+
+</script>
+<body>
+<p id=demo>TEST</p>
+<button id=btn1>OK</button>
+
+</body>
+</html>

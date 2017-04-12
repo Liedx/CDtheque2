@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select2</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+	//doc ready function
+$( document ).ready(function() {
+//----------------	
+  $('#category').select2({
+  	 placeholder: "Select a category",
+	  multiple:true
+	});
+// initialiser la liste
+var data =[
+{ id: 12, text: 'Metal' },
+{ id: 14, text: 'Hard Rock' }
+];
+   $('#category').select2({
+  data: data
+	});
+//----------------	
+// predefinir de valeur slectione
+var data2 = [12,14]
+$('#category').val(data2).trigger("change");
+
+//	
+
+$('#category').on('select2:select', 
+		function (evt) {
+			alert(evt.params.data.id);
+		});
+});
+
+</script>	
+</head>
+
+<body>
+<h1>Select 2</h1>
+<select name="category" id="category" style="width:200px;">
+</select>
+</body>
+</html>
